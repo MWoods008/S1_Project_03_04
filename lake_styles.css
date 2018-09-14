@@ -1,0 +1,131 @@
+﻿@charset "utf-8";
+/* here I called in the fonts I wanted with both woff for newer browsers and ttf for older browsers */
+@font-face {
+    font-family: Champagne;
+    src: url('cac_champagne.woff') format('woff'), url('cac_champagne.ttf') format('truetype');
+    font-family: Dobkin;
+    src: url('DobkinPlain.woff') format('woff'), url('DobkinPlain.ttf') format('truetype');
+}
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 2
+   Case Problem 4
+   
+   Great Lakescape Lodge Style Sheet
+   Author: Maxmillian Woods
+   Date:   9.10.18
+   
+   Filename: lake_styles.css
+
+*/
+/* structure */
+/* for this section I wanted to make base colors for the website, I used body as a vauge statement so that if an element nested inside the body did not have a defined background color it would use this one. */
+html {
+    background-color: rgb(85, 113, 149);
+}
+body {
+    background-color: #e3e2df;
+    font-family: sans-serif;
+}
+
+/* body */
+/* I wanted the main text a little further from the edge so I set a margin here */
+p {
+    margin-left: 10px;
+}
+
+
+/* header */
+/* this section is for the header with the nav bar up top, I defined a baground color and a link color/decoration for when active, inactive, previously visited, and hovered over using psuedo classes. */
+header {
+    background-color: rgba(115, 149, 174, 0.2);
+}
+header > nav a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+header > nav a:link, header nav a:visited {
+    color:rgb(115, 149, 174);
+    text-decoration: none;
+}
+header > nav a:hover, header nav a:active {
+    color: rgb(177, 162, 150);
+    text-decoration: underline;
+}
+
+
+/* this section is for all other links outside of the nav bar because I wanted them to have a different style */
+a:link, a:visited {
+    color: rgb(0, 111, 198);
+    text-decoration: none;
+}
+a:hover, a:active {
+    text-decoration: underline;
+}
+
+/* section */
+/* this section I used direct children and ID's to change specific fonts, colors etc */
+section > h1 {
+    font-family: 'Dobkin', cursive;
+    font-size: 3em;
+    margin: 5px 5px 5px 10px;
+}
+section#rightcol {
+    background-color: rgb(247, 249, 251);
+    border: 2px solid black;
+}
+section#rightcol h2 {
+    text-align: center;
+}
+nav > ul {
+    line-height: 2em;
+    list-style-type: none;
+    padding-left: 30px;
+}
+
+
+/* aside */
+aside {
+    background-color: rgba(80, 133, 165, 0.3);
+}
+aside h1 {
+    
+    font-size: 1.5em;
+    text-align: center;
+}
+aside h2 {
+    font-size: 1em;
+    text-align: center;
+}
+aside#notes {
+   background-color:  rgb(143, 193, 227);
+}
+aside#notes ul{
+    line-height: 25px;
+}
+blockquote {
+    color: rgb(143, 193, 227);
+    margin: 20px 5px;
+    quotes: "\201C""\201D";
+}
+/* psuedo elements were used here to make quotes in the blockquote */
+ blockquote::before {
+    content: open-quote;
+    font-family: sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+blockquote::after {
+    content: close-quote;
+    font-family: sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+/* footer */
+footer {
+    text-align: center;
+    background-color: rgb(93, 92, 97);
+    color: white;
+    padding: 10px 10px 10px 10px;
+}
